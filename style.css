@@ -1,0 +1,817 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+*{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 1rem;
+    font-family: Montserrat;
+    scroll-behavior: smooth;
+}   
+a{
+    text-decoration: none;
+}
+.container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.title{
+    font-size: 2rem;
+    font-weight: 300;
+    color: black;
+    margin-bottom: 10px;
+    padding: auto;
+    text-transform: uppercase;
+}
+span{
+    color: red;
+}
+.aq{
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    border: 2px solid red;
+    color: white;
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    transition: 0.5s ease background-color;
+    transition-property: background-color;
+}
+.aq:hover{
+    background-color: red;
+}
+.brand{
+ color: white;
+}
+h1{
+    font-size: 1.8rem;
+}
+h2{
+    font-size: 1.1rem;
+}
+p{
+    font-size: .8rem;
+    font-weight: 400;
+}
+
+/* Header */
+#header .header .nav-bar h1{
+    color: white;
+    font-size: 1.5rem;
+}
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100vw;
+    height: auto;
+}
+#header .header{
+    min-height: 12vh;
+}
+#header{
+    transition: .4s ease background-color;
+}
+#header .nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 10px;
+}
+#header .nav-list ul{
+    list-style: none;
+    position: absolute;
+    background-image: linear-gradient(60deg, #29323c 0%,#485563 100%);
+    width: 100vW;
+    height: 100vh;
+    top: 0;
+    left: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    transition: .8s ease left;
+}
+#header .nav-list ul.active {
+    left: 0;
+}
+#header .nav-list ul a{
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 10px;
+    margin: auto;
+    letter-spacing: 3px;
+    display: block;
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+    transition: .5s ease color;
+}
+#header .nav-list ul a:hover{
+    color: red;
+}
+#header .nav-list ul a::after {
+    content: attr(data-after);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    color: rgb(240, 248, 255, 0.021);
+    font-size: 8rem;
+    letter-spacing: 8px;
+    transition: .3s ease letter-spacing;
+}
+#header .nav-list ul li:hover a::after {
+    transform: translate(-50%,-50%) scale(1);
+    letter-spacing: initial;
+}
+#header .burger{
+    height: 50px;
+    width: 50px;
+    border: 3px solid white;
+    border-radius: 50%;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 50px;
+    transform: scale(.7);
+}
+#header .burger::after{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 3px solid white;
+    animation: burger_pulse 1s ease infinite;
+    z-index: 101;
+}
+#header .burger .bar{
+    height: 3px;
+    width: 25px;
+    position: relative;
+    background-color: white;
+    z-index: -1;
+}
+#header .burger .bar::after,
+#header .burger .bar::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background-color: white;
+    transition: .3s ease ;
+    transition-property: top , bottom;
+}
+#header .burger .bar::after{
+    top: 9px;
+}
+#header .burger .bar::before{
+    bottom: 9px;
+}
+#header .burger.active .bar::after{
+    top: 0;
+}
+#header .burger.active .bar::before{
+    bottom: 0;
+}
+/* End Header */
+
+/* main*/ 
+#hero{
+    background-image: url(./Images/hero-bg.png);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 5;
+}
+#hero::after{
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: black; opacity: 0.6;
+    z-index: -1 ;
+}
+#hero .hero{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 30px;
+    justify-content: flex-start;
+}
+#hero h1{
+    display: block;
+    width: fit-content;
+    color: transparent;
+    position: relative;
+    font-size: 1.5rem;
+    animation: text-revieal .5s ease forwards;
+    animation-delay:1.5s ;
+}
+#hero h1:nth-child(1){
+    animation-delay:1s;
+}
+#hero h1:nth-child(2){
+    animation-delay:2s;
+}
+#hero h1:nth-child(3){
+    animation: text-revieal-name 1s ease forwards;
+    animation-delay:3s;
+}
+#hero h1 span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: red;
+    animation: text-revieal-box 1s ease ;
+    animation-delay: 1s;
+}
+#hero h1:nth-child(1) span {
+    animation-delay:.5s;
+}
+#hero h1:nth-child(2) span {
+    animation-delay:1.5s;
+}
+#hero h1:nth-child(3) span {
+    animation-delay:2.5s;
+}
+/*End main*/
+
+/* Services*/
+#service .service{
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px 5px;
+    max-width:1200px ;
+}
+#service .service .title{
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 10px;
+    padding: auto;
+    text-transform: uppercase;
+    margin-top: 40px;
+}
+#service .service .service-title p {
+    font-weight: 100;
+    font-size: 0.5rem;
+}
+#service .service-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;margin-top: 50px;
+    color: white;
+}
+#service .service-bottom .service-items p{
+    font-size: .9rem;
+}
+#service .service-items {
+    flex-basis: 80%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    background: url(./Images/img-1.png);
+    border-radius: 20px;
+    margin: 10px 10px;
+    padding: 30px 20px;
+    background-size: cover;
+    z-index: 1;
+    position: relative;
+    font-weight: 500;
+}
+#service .service-items::after {
+    content:"";
+    position: absolute;
+    left: 0;top: 0;
+    height: 100%;width: 100%;
+   background-color:black;opacity: 0.4;
+   border-radius: 20px;
+    z-index: -1;
+}
+#service .service-bottom .icon {
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+}
+/* End Services*/
+
+/* Recent Projects*/
+#projects .projects{
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+    padding-top: 90px;
+}
+#projects .projects .project-header {
+    margin-bottom: 50px;
+}
+#projects .all-projects{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#projects .project-items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 20px 20px;
+}
+#projects .project-info{
+    background-image: linear-gradient(60deg, #29323c 0%,#485563 100%);
+    flex-basis: 50%;
+    height: 100%;
+    padding: 30px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+#projects .projects .all-projects .project-items .project-info h1{
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: white;
+    padding: 10px 10px;
+}
+#projects .projects .all-projects .project-items .project-info h2{
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: white;
+    padding: 10px 10px;
+}
+#projects .projects .all-projects .project-items .project-info p{
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: white;
+    padding: 10px 10px;
+    flex-basis: 50%;    
+}
+#projects .projects .all-projects .project-items .project-img{
+    flex: 50%;
+    height:900px;
+    overflow: hidden;
+    position: relative;
+}
+#projects .projects .all-projects .project-items .project-img::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(60deg, #29323c 0%,#485563 100%); opacity: 0.4;
+    z-index: 2;
+}
+#projects .projects .project-img img{
+    transition: .5s ease transform;
+}
+#projects .projects .project-items:hover img{
+    transform: scale(1.1);
+}
+/* End Recent Projects*/
+
+/* About Me*/
+#about .about{
+    flex-direction: column-reverse;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px 20px;
+    max-width: 1200px;
+    padding-bottom: 100px;
+}
+#about .left{
+    width: 250px;
+    height: 360px;
+}
+#about .right{
+    width: 100%;
+}
+#about .about .right h2{
+    font-weight: 500;
+    padding: 10px 10px; 
+}
+#about .about .right p{
+    font-weight: 300;
+    padding: 10px 10px;
+    flex-basis: 50%;    
+}
+#about .about .right a{
+    color: red;
+    margin-bottom: 50px;
+    transition: 0.4s ease-in  background-color ;
+    transition-property: color background-color;
+}
+#about .about .right a:hover{
+    color: white;
+    background-color: red;
+}
+#about .about .about-img{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: 10px solid white;
+}
+#about .about .about-img::after{
+    content: '';
+    position: absolute;
+    left: -33px;
+    top: 25px;
+    height: 97%;
+    width: 97%;
+    border: 5px solid red;
+    z-index: -1;
+}
+/* End About Me*/
+
+/*Contact*/
+#contact .contact .title{
+    margin-bottom: 50px ;
+}
+#contact .contact {
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#contact .contact-items {
+    width: 350px;
+}
+#contact .contact .contact-info{
+    width: 100px;
+} 
+#contact .contact-item {
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 20px 0px #0000005c;
+    transition: .3s ease box-shadow;
+}
+#contact .contact-item:hover{
+    box-shadow: 0px 0px 8px 0px #0000005c;
+}
+#contact .icon {
+    width: 70px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+#contact .contact .contact-item .contact-info h1{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+#contact .contact .contact-item .contact-info h2{
+    font-size: .8rem;
+    font-weight: 500;
+}
+/*End Contact*/
+
+/* Footer */
+#footer .footer{
+    background-image: linear-gradient(60deg, #29323c 0%,#485563 100%);
+    min-height: 200px;
+    flex-direction: column;
+    padding: 20px;
+    padding-bottom: 10px;
+}
+#footer .footer h1{
+    font-size: 1.5rem;
+}
+#footer .footer h2{
+    color: white;
+    font-size: .8rem;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+}
+#footer .footer .social-items{
+    display: flex;
+    margin-bottom: 15px;
+}
+#footer .footer .social-icon{
+    margin: 0 10px;
+}
+#footer .footer .social-icon img{
+    height: 40px;
+    width: 40px;
+}
+#footer .social-icon img{
+    filter: grayscale(1);
+    transition: .3s ease filter;
+}
+#footer .social-icon:hover img{
+    filter: grayscale(0);
+}
+#footer .footer p{
+    font-size: .5rem;
+    color: white;
+    font-weight: 300;
+}
+/* End Footer */
+
+/*Key Frames*/
+@keyframes burger_pulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.4);
+    }
+}
+@keyframes text-revieal-box{
+    50% {
+        width: 100%;
+        left: 0%;
+    }
+    100% {
+        width: 0%;
+        left: 100%;
+    }
+}
+@keyframes text-revieal {
+    100% {
+       color: white;
+    }
+}
+@keyframes text-revieal-name {
+    100% {
+       color: red;
+    }
+}
+/*End Key Frames*/
+
+/* Media Qurey For Tablet */
+@media only screen and (min-width:768px) {
+    /* Header */
+    #header .header{
+        min-height: 13vh;
+    }
+    #header .burger{
+        top: 10px;
+        right: 50px;
+    }
+    /* End Header */
+    /* Hero */
+    .title{
+        font-size: 2.5rem;
+    }
+    .aq{
+        font-size:1rem ;
+        padding: 15px 40px;
+        margin-top:2rem ;
+    }
+    #hero h1{
+        font-size: 2rem;
+    }
+    /* End Hero */
+
+    /* Service */
+    #service .service .title{
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        font-size: 3rem;
+    }
+    #service .service p {
+        font-size: 1rem;
+    }
+    #service .service-bottom .service-items{
+        flex-basis: 40%;
+    }
+    /* End Service */
+
+    /* Recent */
+    #projects .project-items{
+        height: 300px;
+        width: 100%;
+        border-radius: 0;
+        flex-direction: row;
+        margin: 0;
+    }
+    #projects .project-info{
+        height: 100%;
+    }
+    #projects .project-img{
+        height: 100%;
+    }
+    #projects .project-items:nth-child(even){
+        flex-direction: row-reverse;
+    }
+    #projects .projects .all-projects .project-items .project-info h1 {
+        font-size: 2rem;
+    }
+    #projects .projects .all-projects .project-items .project-info h2 {
+        font-size: 1.3rem;
+    }
+    #projects .projects .all-projects .project-items .project-info p {
+        font-size: 0.8rem;
+    }
+    /* End Recent */
+    
+    /* About */
+    #about .about{
+        flex-direction: row;
+    }
+    #about .about .left{
+        width: 50vw;
+        height: 60vh;
+        margin-left: 20px;padding-left: 20px;
+        margin-right: 20px;padding-right: 20px;
+    }
+    #about .about .right h2{
+        font-size: 1.7rem;
+    }
+    #about .about .right p{
+        font-size: .8rem;
+    }
+    #about .about .right{
+        margin-left: 0;padding-left: 0;
+        margin-right: 0;padding-right: 0;
+        text-align: left;
+    }
+    /* End About */
+
+    /* Contact */
+    #contact .contact{
+        margin-top: 0;
+        min-height: 20vh;
+    }
+    #contact .contact-items {
+        width: 400px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    #contact .contact-item{
+        margin: 20px 40px;
+        padding: 10px 40px;
+    }
+    /* End Contact */
+
+    /* Footer */
+    #footer .footer .social-icon img{
+        height: 50px;
+        width: 50px;
+    }
+    /* End Footer */
+}
+/* End Media Qurey For Tablet */
+
+/* Media Qurey For Desktop */
+@media only screen and (min-width:1200px) {
+    /* Header */
+    #header .header{
+        min-height: 13vh;
+    }
+    #header .header .nav-bar h1{
+        font-size: 2rem;
+    }
+    #header .burger {
+        display: none;
+    }
+    #header .nav-list ul {
+        position: initial;
+        display: block;
+        height: auto;
+        width: fit-content;
+        background-image: none;
+    }
+    #header .nav-list ul li {
+        display: inline-block;
+    }
+    #header .nav-list ul li a{
+        font-size: 1.5rem;
+    }
+    #header .nav-list ul a::after{
+        display: none;
+    }
+    /* End Header */
+    /* Hero */
+    .title{
+        font-size: 3rem;
+    }
+    .aq{
+        font-size:1.3rem ;
+        padding: 10px 30px;
+        margin-top:2rem ;
+    }
+    #hero h1{
+        font-size: 2.5rem;
+    }
+    /* End Hero */
+
+    /* Service */
+    #service .service-bottom .service-items{
+        flex-basis: 20%;
+        width: 90vw;
+    }
+    #service .service-bottom .service-item{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #service .service p {
+        font-size: 1rem;
+    }
+    /* End Service */
+
+    /* Recent */
+    #projects .project-items{
+        height: 300px;
+        width: 1200px;
+        border-radius: 0;
+        flex-direction: row;
+        margin: 0;
+    }
+    /* End Recent */
+
+    /* About */
+    #about .about{
+        flex-direction: row;
+    }
+    #about .about .left{
+        width: 40vw;
+        height: 70vh;
+        margin-left: 20px;padding-left: 20px;
+        margin-right: 20px;padding-right: 20px;
+    }
+    #about .about .right h2{
+        font-size: 2rem;
+    }
+    #about .about .right p{
+        font-size: 1rem;
+    }
+    #about .about .right{
+        margin-left: 30px;padding-left: 30px;
+        margin-right: 30px;padding-right: 30px;
+        text-align: left;
+    }
+    /* End About */
+
+    /* Contact */
+    #contact .contact-item{
+        margin: 20px 50px;
+        padding: 35px 70px;
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+    /* End Contact */
+
+    /* Footer */
+    #footer .footer h1{
+        font-size: 2.2rem;
+    }
+    #footer .footer h2{
+        font-size: 1.2rem;
+    }
+    #footer .footer p{
+        font-size: 0.8rem;
+    }
+     #footer .footer .social-icon img{
+        height: 70px;
+        width: 70px;
+    }
+    /* End Footer */
+} 
+/* End Media Qurey For Desktop */
