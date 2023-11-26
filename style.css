@@ -311,6 +311,9 @@ p {
   position: relative;
   font-weight: 500;
 }
+#service .service-items :nth-child(2) {
+  background: url(./Images/next-js-logo.jpg);
+}
 #service .service-items::after {
   content: "";
   position: absolute;
